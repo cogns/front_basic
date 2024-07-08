@@ -14,8 +14,8 @@
 </head>
 
 <body>
-    <object style="width:100%;" data="header.html" type="text/html"></object>
-    <!-- container : 부스트랩의 컨테이너 클래스는 페이지의 내용을 
+    <object style="width:100%;" data="../common/header.html" type="text/html"></object>
+    <!-- container : 부스트랩의 컨테이너 클래스는 페이지의 내용을
      중앙에 정렬하고 양쪽에 패딩을 추가하고 내용을 감싸는 역할 -->
     <div class="container">
         <div class="page-header">
@@ -30,7 +30,7 @@
                 <tr>
                     <th>id</th><th>title</th><th>contents</th>
                 </tr>
-            </thead>
+            </thead>    
             <tbody id="bodyData">
 
 
@@ -40,7 +40,7 @@
     <script src = "https://unpkg.com/axios/dist/axios.min.js"></script>
     <script>
         async function serverData() {
-            const response1 = await axios.get("http://localhost:8081/post/list");
+            const response1 = await axios.get("http://ec2-43-201-49-42.ap-northeast-2.compute.amazonaws.com:8081/post/list");
             const allData = response1.data;
             console.log(allData);
             let bodyData = document.getElementById("bodyData");
